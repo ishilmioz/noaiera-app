@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+:root{
+  --bg:  #0c0c0d;
+  --bg-2: #272727ff;
+  --ink: #ffffffff;   
+  --muted: #6E6E6E; 
+  --moss:#BABFAA; 
+
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: rgba(255,255,255,0.92);
+}
+
+.h-display { font-weight:500; letter-spacing:.04em; }
+
+.grain::before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(0,0,0,.015) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 75% 75%, rgba(0,0,0,.012) 0 1px, transparent 1px 100%);
+  opacity:.35;
+  mix-blend-mode:multiply;
+}
+
+.h-display { font-weight:300; letter-spacing:.04em; }
+.quiet    { color: var(--muted); }
+::selection { background: #E1E0DD; color: var(--ink); }
+
+.bg-grain {
+  background-image: url("/grain.png");
+  background-size: cover;
+  mix-blend-mode: soft-light;
+  opacity: 0.25;
+  pointer-events: none;
+}
