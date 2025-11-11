@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# noaiera - internetin sessiz odası
 
-## Getting Started
+noaiera, sosyal medya ve yapay zekâ bombardımanından bunalmış insanlar için tasarlanmış,  sadece birkaç dakika boyunca hiçbir şey talep etmeyen bir “sessizlik” deneyimi.
 
-First, run the development server:
+- Reklam yok  
+- Bildirim yok  
+- Takip yok  
+- Veri yok  
+- Takipçi yok  
+- Yapay zekâ yok  
+- Sadece karanlık bir fon, loş bir görsel ve kısa cümleler
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+İnsanlar telefonlarını/bilgisayarlarını kapatmadan, yalnızca birkaç dakika için bile olsa gerçek bir sessizlik yaşayabilsin diye tasarlandı.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Neden noaiera?
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Dijital dünya çok hızlı.  
+Her uygulama bir şey istiyor.  
+Her sayfa konuşuyor.  
+Her algoritma bağırıyor.
 
-## Learn More
+noaiera bunların tam tersi:
 
-To learn more about Next.js, take a look at the following resources:
+- Kullanıcıdan hiçbir şey istemez  
+- İçerik dayatmaz  
+- Kimseyi izlemez  
+- Kimseyi yönlendirmez  
+- Ölçmez, depolamaz, tanımaz
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Bu proje, gerçek anlamda boşluk üretmek için var.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+##  Kullanıcı Deneyimi
+
+1. Sayfa açılır → loş bir arka plan belirir  
+2. Kullanıcı etkileşimi sonrası Ambient ses (varsa) yumuşakça başlar  
+3. Kısa, sert, net cümleler tek tek belirir  
+4. Her cümle yavaşça kaybolur, diğeri gelir  
+
+Form yok, scroll yok, CTA yok, “Bizi değerlendir” yok.  
+Sessizlik biter, kullanıcı isterse çıkar, isterse tekrar izler.
+
+---
+
+## İroni (ve şeffaflık)
+
+noaiera’nın kurulumu, metinleri ve arayüz kararları, geleneksel insan emeğinin yanında bir yapay zekâ asistanının desteğiyle üretildi. Bu detayı saklamıyoruz çünkü proje, “AI karşıtı” bir manifesto değil; dijital gürültüye karşı kısa süreli bir sessizlik alanı.
+
+Ve bu ironiyi gizlemiyoruz.  
+Bu proje,  “AI her yerde, hatta AI’dan kaçmak için inşa edilen yerde bile” demenin başka bir yolu. Teknolojiye değil, aşırılığa, hız takıntısına ve bitmeyen uyarana karşıyız.  
+noaiera, yapay zekânın yardımıyla inşa edilip insanlara birkaç dakika sakinlik sunmayı amaçlıyor.
+
+---
+
+## Tech Stack
+
+| Alan | Tercih |
+|------|--------|
+| Framework | **Next.js 14 (App Router)** |
+| UI | **React + Framer Motion** |
+| Stil | Tailwind + minimal CSS |
+| Font | **DM Sans** |
+| Ses | Web Audio API (ambient loop) |
+| Dağıtım | Vercel veya benzeri statik barındırıcı |
+
+Uygulama tamamen **client-side** çalışır.  
+Sunucu isteği yok, API yok, analytics yok.
+
+
+## Veri Politikası
+
+- Cookie yok  
+- Tracking yok  
+- Analytics yok  
+- LocalStorage yok  
+- Form yok  
+- “Sign in” yok  
+
+**Hiçbir şey kaydetmiyoruz.**  
+Bilerek.
+
+
+---
+
+## Geliştirme Süreci (Kısa Roadmap)
+
+Bu proje fikirden ürüne çok hızlı geçti. Her aşamada amaç tek bir noktaya odaklandı: **sadelik**.
+
+- İlk prototip: karmaşık animasyonlar → fazla dikkat çekti, silindi  
+- Metinler önce çok yumuşak kaldı → daha kısa ve sert hale getirildi  
+- Arka plan önce düz grid idi → loş, etkileyici bir görsel + karanlık maske tercih edildi  
+- Tipografi sıradandı → DM Sans’a geçildi  
+- Bazı tarayıcılarda ses autoplay engellendi → Web Audio API ile düşük volum loop yapıldı  
+- Veri toplayabilecek her mekanizma özellikle devre dışı bırakıldı
+
+**Geliştirme yaklaşımı:**
+
+Bu süreçte ağır kurumsal süreçler değil, küçük ve hızlı iterasyonlar tercih edildi.  
+Klasik Agile ritüelleri kullanılmasa da, aynı felsefe korundu:
+
+- En kısa sürede çalışan ürün  
+- Gereksiz plan yerine gerçek test  
+- Eklemekten çok çıkarmak  
+- “Kâğıt üzerindeki plan” değil, “ekrandaki deneyim”
+
+İsterse bu yapı kolayca kurumsal Agile pratiklerine genişletilebilir:  
+issue tracking, QA akışı, sprint planlaması ve ekip ölçeklendirilmesi mümkün.  
+Ama **noaiera**, doğası gereği en yalın haliyle doğruydu.
+
+---
+
+##  Sonuç
+
+noaiera, modern internetin tam tersidir.  
+Kimseyi eğlendirmeye çalışmaz.  
+Kimseyi ikna etmeye çalışmaz.
+
+
